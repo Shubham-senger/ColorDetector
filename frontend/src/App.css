@@ -1,0 +1,118 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+
+  
+  /* Main App container */
+  .app {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+  }
+  
+  /* Title */
+  .animated-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    animation: titleGlow 3s infinite alternate;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  @keyframes titleGlow {
+    0% {
+      transform: scale(1);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      transform: scale(1.03);
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      transform: scale(1);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+  }
+  
+  /* Toggle container */
+  .toggle-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Video feed */
+  video {
+    width: 100%;
+    max-width: 640px;
+    border: 4px solid white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    cursor: crosshair;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Color Display */
+  .color-display {
+    margin: 25px auto;
+    padding: 20px;
+    color: #000;
+    font-weight: bold;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    animation: floatUpDown 3s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  @keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .color-swatch {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: rotate 4s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .toggle-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .color-display {
+      width: 90%;
+    }
+  }
+  
